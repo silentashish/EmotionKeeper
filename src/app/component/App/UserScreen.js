@@ -76,6 +76,7 @@ export default class UserScreen extends React.Component {
         filteredData.push(data);
       }
     });
+    console.log('Data to look is', this.state.emotions, filteredData);
     return filteredData;
   }
 
@@ -112,6 +113,7 @@ export default class UserScreen extends React.Component {
 
   render() {
     const assetPath = '../../../images/assets';
+
     return (
       <LinearGradient style={styles.container} colors={['#28313B', '#485461']}>
         <Header />
@@ -121,6 +123,8 @@ export default class UserScreen extends React.Component {
               <Text
                 style={{
                   fontWeight: this.state.chartType === 'pie' ? '700' : '300',
+                  color: 'white',
+                  marginTop: 10,
                 }}>
                 Pie Chart
               </Text>
@@ -130,6 +134,8 @@ export default class UserScreen extends React.Component {
               <Text
                 style={{
                   fontWeight: this.state.chartType === 'line' ? '700' : '300',
+                  color: 'white',
+                  marginTop: 10,
                 }}>
                 Line Chart
               </Text>
@@ -167,6 +173,18 @@ export default class UserScreen extends React.Component {
               </Text>
             </TouchableOpacity>
           </View>
+          <TouchableOpacity
+            style={{
+              backgroundColor: 'white',
+              paddingVertical: 10,
+              paddingHorizontal: 20,
+              borderRadius: 5,
+            }}
+            onPress={() =>
+              this.props.navigation.navigate('Home', {data: true})
+            }>
+            <Text>Go Home</Text>
+          </TouchableOpacity>
         </View>
       </LinearGradient>
     );

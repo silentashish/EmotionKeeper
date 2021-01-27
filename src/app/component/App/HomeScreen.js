@@ -38,7 +38,6 @@ export default class HomeScreen extends React.Component {
       allData: [],
     };
   }
-
   storeData = async (value, callback) => {
     try {
       await AsyncStorage.setItem(
@@ -102,6 +101,10 @@ export default class HomeScreen extends React.Component {
   }
 
   saveToDiary() {
+    if (this.state.emotion === null || this.state.text === '') {
+      alert('Enter all field');
+      return;
+    }
     const time = moment().unix(); // current time in unix number
 
     this.storeData(
@@ -111,6 +114,7 @@ export default class HomeScreen extends React.Component {
         text: this.state.text,
       },
       () => {
+        this.setState({text: '', emotion: null});
         this.props.navigation.navigate('User');
       },
     );
