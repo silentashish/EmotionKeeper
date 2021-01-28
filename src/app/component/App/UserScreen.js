@@ -125,10 +125,12 @@ export default class UserScreen extends React.Component {
                   fontWeight: this.state.chartType === 'pie' ? '700' : '300',
                   color: 'white',
                   marginTop: 10,
+                  fontSize: 22,
                 }}>
                 Pie Chart
               </Text>
             </TouchableOpacity>
+
             <TouchableOpacity
               onPress={() => this.setState({chartType: 'line'})}>
               <Text
@@ -136,6 +138,7 @@ export default class UserScreen extends React.Component {
                   fontWeight: this.state.chartType === 'line' ? '700' : '300',
                   color: 'white',
                   marginTop: 10,
+                  fontSize: 22,
                 }}>
                 Line Chart
               </Text>
@@ -150,6 +153,8 @@ export default class UserScreen extends React.Component {
               <Text
                 style={{
                   fontWeight: this.state.filterType === 'day' ? '700' : '100',
+                  fontSize: 18,
+                  color: 'white',
                 }}>
                 Last 24h
               </Text>
@@ -159,6 +164,8 @@ export default class UserScreen extends React.Component {
               <Text
                 style={{
                   fontWeight: this.state.filterType === 'week' ? '700' : '100',
+                  fontSize: 18,
+                  color: 'white',
                 }}>
                 This week
               </Text>
@@ -168,6 +175,8 @@ export default class UserScreen extends React.Component {
               <Text
                 style={{
                   fontWeight: this.state.filterType === 'month' ? '700' : '100',
+                  fontSize: 18,
+                  color: 'white',
                 }}>
                 This month
               </Text>

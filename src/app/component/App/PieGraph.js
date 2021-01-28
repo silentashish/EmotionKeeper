@@ -131,9 +131,15 @@ export default class PieGraph extends React.Component {
                 },
                 width: 12,
               },
+              labels: {fill: '#ffffff'},
             }}
           />
-          <VictoryAxis />
+          <VictoryAxis
+            style={{
+              ticks: {fill: '#ffffff'},
+              tickLabels: {fill: '#ffffff'},
+            }}
+          />
         </VictoryChart>
       </View>
     );

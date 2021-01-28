@@ -159,16 +159,16 @@ const styles = StyleSheet.create({
 
   chartFilter: {
     height: 70,
-    width: '65%',
+    width: '100%',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     flexDirection: 'row',
   },
 
   chartOption: {
-    width: '40%',
+    width: '100%',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     flexDirection: 'row',
   },
 });

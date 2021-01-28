@@ -41,7 +41,7 @@ export default class LineGraph extends React.Component {
         <VictoryLine
           style={{
             data: {stroke: '#c43a31'},
-            parent: {border: '1px solid #ccc'},
+            parent: {border: '2px solid #ccc'},
           }}
           x="date"
           y="emotion"
@@ -62,6 +62,10 @@ export default class LineGraph extends React.Component {
             'Blissful',
             'Loved',
           ]}
+          style={{
+            ticks: {fill: '#ffffff'},
+            tickLabels: {fill: '#ffffff'},
+          }}
         />
       </VictoryChart>
     );

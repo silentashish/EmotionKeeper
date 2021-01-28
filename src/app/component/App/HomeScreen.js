@@ -101,8 +101,8 @@ export default class HomeScreen extends React.Component {
   }
 
   saveToDiary() {
-    if (this.state.emotion === null || this.state.text === '') {
-      alert('Enter all field');
+    if (this.state.emotion === null) {
+      alert('Select Emotion first');
       return;
     }
     const time = moment().unix(); // current time in unix number
@@ -116,6 +116,9 @@ export default class HomeScreen extends React.Component {
       () => {
         this.setState({text: '', emotion: null});
         this.props.navigation.navigate('User');
+        Object.keys(this.refs).forEach((ref) => {
+          this.refs[ref].setNativeProps({style: {width: 40, height: 40}});
+        });
       },
     );
     // firebase.database().ref(`/emotions/${this.state.uid}/${time}`)
